@@ -45,6 +45,20 @@ export default {
                ]
            }
         }
+    },
+    created(){
+         console.log(this.httpService,'+++++++++++++++++++++++')
+    },
+     methods:{
+         
+        
+        login(loginForm){
+           
+           this.httpService.login(loginForm).then(res=>{
+
+               console.log(res,'--------------------')
+           })
+        }
     }
 }
 </script>
