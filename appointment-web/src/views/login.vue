@@ -45,26 +45,19 @@ export default {
            }
         }
     },
-    methods:{
+    created(){
+         console.log(this.httpService,'+++++++++++++++++++++++')
+    },
+     methods:{
+         
+        
+        login(loginForm){
+           
+           this.httpService.login(loginForm).then(res=>{
 
-        login(loginForm) {
-
-            this.$refs[loginForm].validate((valid)=>{
-                    console.log(1111111)
-
-                if(valid) {
-                    this.$message.success("表单填写正确")
-
-                }
-
-                else {
-
-                      this.$message.error('表单未填写完整');
-                }
-            })
-
+               console.log(res,'--------------------')
+           })
         }
-
     }
     
 }
