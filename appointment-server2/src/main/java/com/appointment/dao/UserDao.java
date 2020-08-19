@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 public interface UserDao {
 
     // 通过登录手机号获取用户信息
-     User  getUserInfo(Integer phone );
+     User  getUserInfo(String phone );
 
     // 通过Id 获取用户信息
 
