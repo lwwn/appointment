@@ -25,6 +25,8 @@ public class Login {
 
           User user = userDao.getUserInfo(phone);
 
+        System.out.println("login接口已被条用了");
+
           return user;
 
     }

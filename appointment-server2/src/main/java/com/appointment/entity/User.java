@@ -1,8 +1,10 @@
 package com.appointment.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class User {
 
     public  long id;
