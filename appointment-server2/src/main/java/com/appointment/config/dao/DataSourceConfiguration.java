@@ -19,7 +19,7 @@ public class DataSourceConfiguration {
     @Value("${jdbc.driver}")
     private String jdbcDriver;
 
-    @Value("${jdbc.url}")
+    @Value("jdbc:mysql://localhost:3306/appointment?characterEncoding=utf-8&useSSL=false")
     private  String jdbcUrl;
 
     @Value("${jdbc.username}")

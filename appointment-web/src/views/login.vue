@@ -3,8 +3,8 @@
          <div class="flex_s_c">
              <el-form  :model="loginForm" :rules="validator" ref="loginForm" label-width="70px" class="login-form">
 
-                 <el-form-item label="用户名" prop="userName" >
-                     <el-input type="text" v-model="loginForm.userName" size="small" class="transparent"></el-input>
+                 <el-form-item label="手机号" prop="phone" >
+                     <el-input type="text" v-model="loginForm.phone" size="small" class="transparent"></el-input>
                  </el-form-item>
 
                   <el-form-item label="密码" prop="passWord" >
@@ -30,7 +30,7 @@ export default {
         return {
            loginForm :{
 
-               userName:'',
+               phone:'',
 
                passWord:''
            },
@@ -52,8 +52,9 @@ export default {
          
         
         login(loginForm){
-           
-           this.httpService.login(loginForm).then(res=>{
+            console.log(loginForm,'loginForm')
+            
+           this.httpService.login(this.loginForm).then(res=>{
 
                console.log(res,'--------------------')
            })

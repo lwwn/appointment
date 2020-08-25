@@ -1,21 +1,21 @@
 package com.appointment.controller;
 
-import com.appointment.dao.UserDao;
+import com.appointment.dao.UserMapper;
 import com.appointment.entity.User;
-import com.sun.deploy.net.HttpRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("a")
 public class Login {
 
-    @Autowired
-    private UserDao userDao;
+    @Resource
+    private UserMapper userMapper;
 
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
@@ -23,7 +23,9 @@ public class Login {
 
         String phone =  request.getParameter("phone");
 
-          User user = userDao.getUserInfo(phone);
+        System.out.println(phone+"email");
+
+          User user = userMapper.getUserInfo(phone);
 
         System.out.println("login接口已被条用了");
 

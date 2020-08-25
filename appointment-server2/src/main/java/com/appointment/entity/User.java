@@ -7,33 +7,33 @@ import lombok.Data;
 @AllArgsConstructor
 public class User {
 
-    public  long id;
+    public  int id;
 
-    public  long createAt;
+//    public  long createAt;
 
-    public  long  updateAt;
+//    public  long  updateAt;
 
-    public  String  userName;
+    public  String  name;
 
-    public  int    age;
+//    public  int    age;
 
-    public  int   sex;
+//    public  int   sex;
 
-    public  int   qq;
+//    public  int   qq;
 
-    public  String email;
+//    public  String email;
 
-    public   String  describe;
+//    public   String  describe;
 
-    public   String  headImg;
+//    public   String  headImg;
 
-    public   String  gitHupAccount;
+//    public   String  gitHupAccount;
 
-    public  String  wxNumber;
+//    public  String  wxNumber;
 
-    public  Integer phone;
+    public  String phone;
 
-    public  int  verifyCode;
+//    public  int  verifyCode;
 
-    public  Integer passWord;
+    public  String password;
 }
