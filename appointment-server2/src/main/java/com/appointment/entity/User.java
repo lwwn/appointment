@@ -15,25 +15,25 @@ public class User {
 
     public  String  name;
 
-//    public  int    age;
+    public  int    age;
 
-//    public  int   sex;
+    public  int   sex;
 
-//    public  int   qq;
+    public  String   qq;
 
-//    public  String email;
+    public  String email;
 
-//    public   String  describe;
+    public   String  describe;
 
-//    public   String  headImg;
+    public   String  headImg;
 
-//    public   String  gitHupAccount;
+    public   String  gitHupAccount;
 
-//    public  String  wxNumber;
+    public  String  wxNumber;
 
     public  String phone;
 
-//    public  int  verifyCode;
+    public  String  verifyCode;
 
     public  String password;
 }
