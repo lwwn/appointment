@@ -7,8 +7,8 @@
                      <el-input type="text" v-model="loginForm.phone" size="small" class="transparent"></el-input>
                  </el-form-item>
 
-                  <el-form-item label="密码" prop="passWord" >
-                     <el-input type="passWord" v-model="loginForm.passWord" size="small" class="transparent"></el-input>
+                  <el-form-item label="密码" prop="password" >
+                     <el-input type="password" v-model="loginForm.password" size="small" class="transparent"></el-input>
                  </el-form-item>
 
                  <el-form-item>
@@ -16,8 +16,6 @@
                           登录
                      </el-button>
                  </el-form-item>
-
-
              </el-form >
          </div>
      </div>
@@ -39,7 +37,7 @@ export default {
                userName:[
                    {required: true, message: '请填写用户名', tigger: 'blur'}
                ],
-               passWord:[
+               password:[
                    {required: true, message: '请填写密码', tigger:'blur'},
                ]
            }

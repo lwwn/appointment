@@ -1,8 +1,9 @@
 package com.appointment.service;
 
 import com.appointment.entity.User;
+import com.appointment.utils.BaseResponse;
 
 public interface UserService {
 
-   User getUserByLoginPhone(String phone, String password);
+   BaseResponse getUserByLoginPhone(String phone, String password);
 }

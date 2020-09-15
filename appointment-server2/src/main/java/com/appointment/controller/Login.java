@@ -20,12 +20,22 @@ public class Login {
 
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public BaseResponse login(HttpServletRequest  request){
+    public BaseResponse login(HttpServletRequest  request, String phone, String password){
 
-        String phone =  request.getParameter("phone");
-        String password =  request.getParameter("password");
+//        String phone =  request.getParameter("phone");
+//        String password =  request.getParameter("password");
         System.out.println(phone+"phone"+ password+":password");
-        User user =   userService.getUserByLoginPhone(phone,password);
+         if(phone.length() <= 0){
+             System.out.println("---------kong----------");
+             return new BaseResponse("-1","用户名为空");
+         }
+         if(password.length() <= 0){
+
+             return new BaseResponse("-1","密码不能为空");
+         }else {
+
+             return   userService.getUserByLoginPhone(phone,password);
+         }
 
 //        System.out.println(phone+"email");
 
@@ -33,7 +43,6 @@ public class Login {
 
 //        System.out.println("login接口已被条用了");
 
-          return new BaseResponse(user);
 
     }
 
