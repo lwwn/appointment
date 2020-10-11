@@ -33,4 +33,11 @@ public class UserServiceImpl implements UserService {
 
 //        return user;
     }
+
+    @Override
+    public BaseResponse updateUser(User user) {
+        System.out.println(user+"用户对象");
+        userMapper.updateUser(user);
+        return  new BaseResponse("0","账号或者密码错误");
+    }
 }

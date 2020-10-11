@@ -44,7 +44,6 @@ export default {
         }
     },
     created(){
-         console.log(this.httpService,'+++++++++++++++++++++++')
     },
      methods:{
          
@@ -54,7 +53,17 @@ export default {
             
            this.httpService.login(this.loginForm).then(res=>{
 
-               console.log(res,'--------------------')
+               if(res.data.code == 0) {
+
+                  localStorage.user = JSON.stringify(res.data.data);
+                  this.$router.push({name:'main'})
+               }
+               else{
+                   this.$message({
+                       type:'error',
+                       message:res.data.message
+                   })
+               }
            })
         }
     }

@@ -9,6 +9,9 @@ const httpService = {
 
     login(params) {
         return axios.post(adress.login(), serialize(params) );
+    },
+    updateUser(params){
+        return axios.put(adress.updateUser(), serialize(params) );
     }
 }
 
