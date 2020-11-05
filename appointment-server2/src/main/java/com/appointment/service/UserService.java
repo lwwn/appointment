@@ -19,4 +19,18 @@ public interface UserService {
     * @return
     */
    BaseResponse updateUser(User user);
+
+   /**
+    * 获取用户信息
+    * @param id
+    * @return
+    */
+   BaseResponse getUserInfo(int id);
+
+   /**
+    * 注册
+    * @param phone password
+    * @return
+    */
+   BaseResponse  registerUser(String phone, String password);
 }

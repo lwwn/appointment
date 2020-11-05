@@ -12,7 +12,13 @@ const httpService = {
     },
     updateUser(params){
         return axios.put(adress.updateUser(), serialize(params) );
-    }
+    },
+    getUserInfo(params){
+        return axios.get(adress.getUserInfo(), {params:params} );
+    },
+    registerUser(params) {
+        return axios.post(adress.registerUser(), serialize(params) );
+    },
 }
 
 export default httpService;

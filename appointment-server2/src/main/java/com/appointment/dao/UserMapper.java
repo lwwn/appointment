@@ -1,7 +1,7 @@
 package com.appointment.dao;
-
 import com.appointment.entity.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
 @Mapper
@@ -16,7 +16,10 @@ public interface UserMapper {
      User getAsIdUserInfo(int id);
 
      // 更新用户信息
-    void updateUser(User user);
+    void updateUser(  User user);
+
+    // 注册
+    void registerUser(User user);
 
 
 

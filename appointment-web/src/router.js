@@ -28,6 +28,18 @@ const routers = [
                     name: 'user',
                     component: () =>
                         import ('./views/userCenter/user.vue'),
+                },
+                {
+                    path: 'daily',
+                    name: 'daily',
+                    component: () =>
+                        import ('./views/daily/daily.vue'),
+                },
+                {
+                    path: 'dailyList',
+                    name: 'dailyList',
+                    component: () =>
+                        import ('./views/daily/dailyList.vue'),
                 }
             ]
     },

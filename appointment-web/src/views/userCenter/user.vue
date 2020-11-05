@@ -89,6 +89,7 @@ export default {
 
             if(res.data.code == 0){
               this.$message.success('更新成功')
+              this.getUserInfo();
             }
           })
         } else {
@@ -97,6 +98,23 @@ export default {
         }
       });
     },
+
+    // 获取用户信息
+    getUserInfo(){
+      let params = {
+        id:this.userForm.id
+      }
+      this.httpService.getUserInfo(params).then(res=>{
+
+        console.log(res,'----res');
+
+        if(res.data.code == 0) {
+
+          this.userForm = res.data.data;
+          localStorage.user = JSON.stringify(res.data.data)
+        }
+      })
+    }
   },
 };
 </script>

@@ -52,11 +52,33 @@ public class Login {
 
     }
 
+    /**
+     *  更新用户信息
+     * @param user
+     * @return
+     */
+
     @RequestMapping(value = "a/update/user", method = RequestMethod.PUT)
-    public  BaseResponse setUser(@ModelAttribute User user){
+    public  BaseResponse setUser( User user){
 
         return  userService.updateUser(user);
 
+    }
+
+    /**
+     * 获取用户信息
+     * @param id
+     * @return
+     */
+    @RequestMapping(value = "a/userInfo", method = RequestMethod.GET)
+    public  BaseResponse getUserInfo(int id) {
+        return userService.getUserInfo( id);
+    }
+
+    @RequestMapping(value = "a/register/user",method = RequestMethod.POST)
+    public  BaseResponse registerUser(HttpServletRequest  request, String phone, String password) {
+        System.out.println(phone+password+"controller");
+        return  userService.registerUser(phone,password );
     }
 
 }

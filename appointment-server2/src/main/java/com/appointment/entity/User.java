@@ -15,9 +15,9 @@ public class User {
 
     public  String  name;
 
-    public  int    age;
+    public  int    age = 0;
 
-    public  int   sex;
+    public  int   sex = 0;
 
     public  String   qq;
 
@@ -36,4 +36,9 @@ public class User {
     public  String  verifyCode;
 
     public  String password;
+
+    public User(String phone, String password) {
+        this.phone = phone;
+        this.password = password;
+    }
 }

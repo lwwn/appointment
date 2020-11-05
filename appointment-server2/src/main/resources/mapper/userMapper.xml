@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.appointment.dao.UserMapper">
+    <!--    注册-->
+    <insert id="registerUser" >
+        insert into User(phone,password,sex,age) values (#{phone},#{password},1,1)
+    </insert>
     <!-- 根据主键查询-->
     <select id="getAsIdUserInfo" resultType="com.appointment.entity.User" parameterType="int" >
         select  *
@@ -16,10 +20,10 @@
     </select>
 
 <!--    设置用户信息-->
-    <update id="updateUser" parameterType="java.util.Map">
+    <update id="updateUser" >
         update User
-        set name= #{user.name},qq=#{user.qq},email=#{user.email},describe=#{user.describe},phone=#{user.phone},password=#{user.password}
-        where id=#{user.id}
+        set name= #{name},qq=#{qq},email=#{email},phone=#{phone},password=#{password}
+        where id=#{id}
     </update>
 
 
