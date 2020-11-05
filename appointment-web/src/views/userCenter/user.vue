@@ -102,9 +102,11 @@ export default {
     updateUser() {
       this.$refs["userForm"].validate((valid) => {
         if (valid) {
-          this.httpService.updateUser(this.userForm).then((res) => {
-            if (res.data.code == 0) {
-              this.$message.success("更新成功");
+          this.httpService.updateUser(this.userForm).then(res=>{
+
+            if(res.data.code == 0){
+              this.$message.success('更新成功')
+              this.getUserInfo();
             }
           });
         } else {
