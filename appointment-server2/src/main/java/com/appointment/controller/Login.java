@@ -4,6 +4,7 @@ import com.appointment.entity.User;
 import com.appointment.service.impl.UserServiceImpl;
 import com.appointment.utils.BaseResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,14 +13,19 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
-@RequestMapping("a")
 public class Login {
 
     @Autowired
     private UserServiceImpl userService;
 
-
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    /**
+     *   登录
+     * @param request
+     * @param phone
+     * @param password
+     * @return
+     */
+    @RequestMapping(value = "a/login",method = RequestMethod.POST)
     public BaseResponse login(HttpServletRequest  request, String phone, String password){
 
 //        String phone =  request.getParameter("phone");
@@ -43,6 +49,13 @@ public class Login {
 
 //        System.out.println("login接口已被条用了");
 
+
+    }
+
+    @RequestMapping(value = "a/update/user", method = RequestMethod.PUT)
+    public  BaseResponse setUser(@ModelAttribute User user){
+
+        return  userService.updateUser(user);
 
     }
 

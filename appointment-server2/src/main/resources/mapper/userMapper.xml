@@ -15,5 +15,12 @@
         where phone = #{phone}
     </select>
 
+<!--    设置用户信息-->
+    <update id="updateUser" parameterType="java.util.Map">
+        update User
+        set name= #{user.name},qq=#{user.qq},email=#{user.email},describe=#{user.describe},phone=#{user.phone},password=#{user.password}
+        where id=#{user.id}
+    </update>
+
 
 </mapper>
