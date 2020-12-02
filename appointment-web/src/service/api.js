@@ -11,7 +11,13 @@
      },
      registerUser(){
         return 'a/register/user'
-     }
+     },
+     addDaily(){
+        return 'add/daily/'
+     },
+     getDailyList(){
+      return 'get/daily/list'
+   }
  }
 
  export default adress;

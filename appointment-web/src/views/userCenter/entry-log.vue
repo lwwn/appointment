@@ -26,6 +26,7 @@
   </div>
 </template>
 <script>
+
 export default {
   data() {
     return {
@@ -46,6 +47,10 @@ export default {
       save(){
 
           console.log(this.logForm,'logForm');
+          this.httpService.addDaily(this.logForm).then(res=>{
+
+            console.log(res, 'res---------------------');
+          })
       }
   },
 };

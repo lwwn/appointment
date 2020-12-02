@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.appointment.dao.DailyMapper">
+    <!--  创建日志  -->
+    <insert id="createDaily" >
+        insert into Daily(title,coverUrl,content) values (#{title},#{coverUrl},#{content})
+    </insert>
+
+
+<!--     查询日记-->
+    <select id="getDailyList" resultType="com.appointment.entity.Daily" >
+        select  *
+        from daily
+    </select>
+
+    <!--    更新日志-->
+<!--    <update id="updateUser" >-->
+<!--        update User-->
+<!--        set name= #{name},qq=#{qq},email=#{email},phone=#{phone},password=#{password}-->
+<!--        where id=#{id}-->
+<!--    </update>-->
+
+
+</mapper>

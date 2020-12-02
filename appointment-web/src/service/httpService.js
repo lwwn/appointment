@@ -19,6 +19,12 @@ const httpService = {
     registerUser(params) {
         return axios.post(adress.registerUser(), serialize(params) );
     },
+    addDaily(params) {
+        return axios.post(adress.addDaily(), serialize(params) );
+    },
+    getDailyList(params) {
+        return axios.post(adress.getDailyList(), serialize(params) );
+    },
 }
 
 export default httpService;
