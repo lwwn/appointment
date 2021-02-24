@@ -1,6 +1,6 @@
 一个vue webApp  大概由nodejs环境  npm包管理     vue-cli (脚手架,主要简化配置 基于webpack(依赖nodejs 环境) )
 
-21/2/24
+21/2/23
   env 是依赖什么（环境）?  是什么 ?
   
   vue-cli  是一个模式和环境配置文件。方便在不同的开发模式切换。 
@@ -23,5 +23,16 @@
      env环境文件每次都会被加载， 但特定模式准备的环境文件会比env环境具有更高的优先级 （注意：修改了环境文件后，需要重新启动应用）
      
      
-
+21/2/24  
+   vue-cli 项目中 遇见require 方法,在其他非cli项目中，使用require 需要引入require.js 文件。但cli项目中一般都没有引入require . 那这个require 是基于那个环境呢?
+   
+   这儿的require 是基于webpack的依赖管理。
+   参考：https://webpack.docschina.org/guides/dependency-management/#requirecontext
+   
+   在查询require 的时候大概了解了一下require其他信息。比如为什么会诞生require 。
+      在2009年 Ryan Dahl 创建了nodejs 项目 ，把js 用于服务器端。 但服务器端一定需要模块化编程，node核心就是模块化编程。 正是在这种思想下，催生了两种模块化规范, 一是commonJS 和 AMD commonJs,
+      也诞生以这种规范的工具包。如
+      require.js  和sea.js(cmd规范的追谁者)
+      参考：commonjs规范文档  https://javascript.ruanyifeng.com/nodejs/module.html 
+      
   
