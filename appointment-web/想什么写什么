@@ -34,5 +34,53 @@
       也诞生以这种规范的工具包。如
       require.js  和sea.js(cmd规范的追谁者)
       参考：commonjs规范文档  https://javascript.ruanyifeng.com/nodejs/module.html 
+
+20/12/10
+ vue 项目中使用webcan 完成摄像头拍照打卡功能。 支持IE 
+ 1.首先下载webcan资源文件，并放在public 文件夹中webcam.swf 也放在这个文件夹。
+ 2.具体使用页面
+  html  <div id="my_camera" class="my_camera"></div>  webcam 的引用 
+         <el-button style="margin-top: 20px" type="primary" @click="take_snapshot">拍摄图片</el-button>
+
+ js :  在mounted 中完成配置
+       mounted() {
+    Webcam.set({
+      width: 320,
+      height: 240,
+      image_format: 'jpeg',
+      jpeg_quality: 90,
+    });
+    Webcam.attach('#my_camera');
+   },
+   
+   拍照方法 
+    take_snapshot: function () {
+      // take snapshot and get image data
+      let _this = this;
+
+      Webcam.snap(function (data_uri) {
+        // console.log(data_uri, 'data_uri');
+        let theBob = _this.dataURLtoFile(data_uri, 'file', 'jpg');
+        // console.log(theBob, '-------------');
+
+        // let formData = new FormData();
+        //data 为二进制的blob图片骗数据,//fileName 文件名
+        // formData.append('files',theBob.file, theBob.name);
+        // console.log(formData,'formData');
+        let params = {
+          base64: data_uri,
+        };
+        imgUpload(params).then(res => {
+          if(res.code == 200){
+          _this.ruleForm.signInOutImg = res.data.url
+            msg.success('成功')
+             
+          }
+        });
+
+     
+      });
+    },
+
       
   
