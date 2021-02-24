@@ -1,0 +1,27 @@
+一个vue webApp  大概由nodejs环境  npm包管理     vue-cli (脚手架,主要简化配置 基于webpack(依赖nodejs 环境) )
+
+21/2/24
+  env 是依赖什么（环境）?  是什么 ?
+  
+  vue-cli  是一个模式和环境配置文件。方便在不同的开发模式切换。 
+  
+  参考： env 对应的是 vue-cli 中的（https://cli.vuejs.org/zh/guide/mode-and-env.html#%E6%A8%A1%E5%BC%8F），模式和环境变量。
+     
+  模式指的是应用的模式 具体有开发模式(developer)  Test模式     生产模式(production)  每种模式都有与之对应的环境变量文件 env(developer) env.test (test) env.prod (production)。 
+  cli 运行时会加载环境变量文件,读取里面配置的环境变量。
+  
+  有一点需要注意，只有 NODE_ENV  BASE_URL  VUE_APP_  定义的变量会打包到静态代码中。
+  
+  访问环境变量 
+    列如： 环境变量中定义了以下字段
+       NODE_ENV = development
+       VUE_APP_TITLE = 'APP'
+       
+       在js 文件中这样访问  process.env.VUE_APP_TITLE
+       
+  环境文件的优先级  
+     env环境文件每次都会被加载， 但特定模式准备的环境文件会比env环境具有更高的优先级 （注意：修改了环境文件后，需要重新启动应用）
+     
+     
+
+  
