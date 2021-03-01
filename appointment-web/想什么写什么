@@ -81,6 +81,19 @@
      
       });
     },
+    
+    21/3/1 
+     今天写vue，父组件向子组件传参？还是报了直接改变属性这个错。 头痛，这些这么基础的东西。还不记住。
+       Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. Instead, use a data or computed property based on the prop's value. Prop being mutated: "test"
+       避免直接改变属性，因为每当父组件重新渲染时，该值将被覆盖。相反，使用基于属性值的数据或计算属性。道具变异：“测试”。
+       vue 中要保持数据单向流动。
+       后面又看了一遍，prop 篇 主要 讲了
+         1.命名的问题，组件的名称使用驼峰命名，但是在浏览器中，浏览器对标签大小写不敏感。
+         2.prop介绍如何传入一个，数字，字符串，布尔值，对象，数组。 prop可以对传入的数据进行类型检查。 还可以自定义类型。prop 是单向向下进行数据流动，请不要在子级改变prop 数据。
+           如果需要依赖这个prop，可以换成计算属性。 还有一点需要注意（prop 传递数组，对象的时候，其实传递的是一个引用，所以在子组件改变了这个变量，相应的宰所有的地方，都进行了相应的改变。）
+         3.非prop 属性的处理。
+           一般情况下，非prop属性会被加在组件的根元树上。 但也可以设置禁用非prop属性，只需要在组件上设置inheritAttrs: false 属性即可。
+            还可以配合实列 $attrs 属性。进行操作，$attrs 包含了传递给一个组件的 attribute 名和 attribute 值。（还有一个注意点，style class 不会受此影响）
 
       
   
