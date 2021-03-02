@@ -96,4 +96,25 @@
             还可以配合实列 $attrs 属性。进行操作，$attrs 包含了传递给一个组件的 attribute 名和 attribute 值。（还有一个注意点，style class 不会受此影响）
 
       
-  
+    21/3/2
+      今天又疑惑了，请求参数的几种传递方式，总结一下
+      1.路径参数上带参数
+       列如：admin/education/enroll/userEnrollInfo/continue/3209575
+      2.query string parameters（查询字符串参数）
+        通常我们发送get请求时，参数会以?的方式追加到url后面。
+       列如：url?test=1&test2=000
+      3.request payload
+        这种参数传递方式，一般是发送post请求的时候，然后content-type 为 application-json 。参数不会跟在url后面，会以json 的方式展现在body中。
+       列如: 
+       {beginDate: "", endDate: "", curPage: 1, pageSize: 10, signUpType: "", searchContent: "",…}
+       beginDate: ""
+       curPage: 1
+       endDate: ""
+      4.form-data （表单对象）
+        这种请求方式，也是发送post 请求。但请求方式为content-type为application/x-www-form-urlencoded . 还需要对数据进行处理vue中有qs。 展现形式
+        列如：
+        pagesize：10，
+        curpage:1,
+
+       
+    
