@@ -116,5 +116,25 @@
         pagesize：10，
         curpage:1,
 
-       
+    21/3/4
+      今天看了webpack 第三节 开发环境？ 如何才能有效的学习知识？
+      1.带着问题去学习？
+      2.看她解决啥问题？
+      3.解决方式是什么？
+      4.有什么好处？
+      如:开发环境这篇文章
+      看标题知道大概讲解决一些开发环境的问题， 
+       解决了什么问题呢?
+           1.错误定位问题。 
+              原因： 以往未用webpack 时，问题直接暴露了那个文件，在那个位置。 而用了webpack打包后，可能很多文件被打包在一起了。报错后控制台提示的错误信息。就没有太大的参考价值了。
+              解决: 在配置中增加了devtool参数，里面提供了很选项。如 选择inline-source-map  选项。控制台报错就会把准确的文件地址打印出来了。
+           2.自动编译 （watch mode） 
+             原因：过往我们改动代码，编译都需要手动，极为不便
+             解决: watch mode  观察模式 , 使用webpack watch mode后当一个文件改变时，观察模式就会自己自动编译。
+           3. 实时刷新 （ webpack-dev-server）
+              原因: 过往我们改动代码编译后，还需要手动刷新一些浏览器。极不方便
+              解决：首先下载插件，npm install --save-dev webpack-dev-server,然后在webpack.config.js 配置里面加入参数devServer :'/dist'，接下来在packge.json script 加入"start": "webpack serve --open",
+          4. 中间件 （webpack-dev-middleware）
+              没看懂
+             
     
