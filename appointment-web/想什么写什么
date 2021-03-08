@@ -137,4 +137,18 @@
           4. 中间件 （webpack-dev-middleware）
               没看懂
              
-    
+    21/3.8
+       周一状态不是很好，三分钟热情看下，vue.js 。
+       vue类 在5073 行，  81到85 通过initMixin ，stateMixin, eventsMinix,lifecyleMixin,renderMixin 进行vue类的构建。
+       这是vue 的初始化方法  initMixin 主要挂载了实列化的init 方法。 
+          init{
+              initLifecycle(vm):
+              initEvents(vm):
+              initRender(vm):
+              callHook(vm, 'beforeCreate'):
+              initInjections(vm):
+              initState(vm):
+              initProvide(vm):
+              callHook(vm, 'created')
+          }
+        
